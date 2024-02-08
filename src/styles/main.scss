@@ -1,5 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Delicious+Handrawn&family=Pixelify+Sans:wght@400;500;600;700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Delicious+Handrawn&family=Pixelify+Sans:wght@400;500;600;700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Delicious+Handrawn&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Pixelify+Sans:wght@400;500;600;700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
 * {
   margin: 0px;
   padding: 0px;
@@ -10,7 +12,7 @@ $button: #e72e2e;
 $button-active: #ffbe0b;
 
 body {
-  height: 100dvh;
+  height: 100vh;
   background-color: $primary-color;
   display: flex;
   flex-direction: column;
@@ -38,7 +40,8 @@ body {
   align-items: center;
   flex-direction: column;
   background-color: $content-background;
-  height: 70vh;
+  height: 500px;
+  flex-grow: 1;
   border-radius: 15px;
   width: 80%;
   margin-top: 40px;
@@ -52,13 +55,14 @@ body {
 
 .button {
   width: 95px;
-  height: 40px;
+  height: 45px;
   border-radius: 17px;
   border: 1px solid $button;
   background-color: $button;
   font-family: "Poppins", sans-serif;
   font-size: 1.1rem;
   font-weight: 600;
+  box-sizing: content-box;
 }
 .active {
   border: 2px solid $button-active;
@@ -88,4 +92,11 @@ body {
   bottom: -22px;
   right: -46px;
   transform: rotate(312deg);
+}
+.text {
+  font-family: "Poppins", sans-serif;
+  font-size: 1.5rem;
+  font-family: "Lato", sans-serif;
+  font-weight: 600;
+  padding: 10px;
 }

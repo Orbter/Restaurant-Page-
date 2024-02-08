@@ -4,9 +4,10 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 module.exports = {
   entry: "./src/index.js",
   output: {
-    filename: "main.js",
     path: path.resolve(__dirname, "dist"),
+    filename: "main.js",
     publicPath: "/",
+    assetModuleFilename: "[name][ext]",
   },
   module: {
     rules: [
@@ -19,6 +20,17 @@ module.exports = {
   },
   devtool: "inline-source-map",
   mode: "development",
+  devServer: {
+    static: {
+      directory: path.resolve(__dirname, "dist"),
+    },
+    port: 3000,
+    open: true,
+    hot: true,
+    compress: true,
+    historyApiFallback: true,
+    // other configurations...
+  },
 
   plugins: [
     new HtmlWebpackPlugin({
