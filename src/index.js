@@ -16,10 +16,51 @@ leafImg2.src = leaf;
 leafImg3.src = leaf;
 leafImg4.src = leaf;
 
+const homeButton = document.getElementById("home-button");
+const menuButton = document.getElementById("menu-button");
+const aboutButton = document.getElementById("about-button");
+homeButton.addEventListener("click", loadHome);
+menuButton.addEventListener("click", loadMenu);
+aboutButton.addEventListener("click", loadAbout);
+
+function loadHome() {
+  const content = document.getElementById("content");
+  if (homeButton.classList.contains("active")) {
+    return;
+  } else {
+    Remove(content);
+    toggelButtons(homeButton);
+    homePage();
+  }
+}
+function loadMenu() {
+  const content = document.getElementById("content");
+  if (menuButton.classList.contains("active")) {
+    return;
+  } else {
+    Remove(content);
+    toggelButtons(menuButton);
+    menuPage();
+  }
+}
+function loadAbout() {
+  const content = document.getElementById("content");
+  if (aboutButton.classList.contains("active")) {
+    return;
+  } else {
+    Remove(content);
+    toggelButtons(aboutButton);
+    aboutPage();
+  }
+}
 function Remove(div) {
   while (div.firstChild) {
     div.removeChild(div.firstChild);
   }
 }
-
-console.log("Loading...");
+function toggelButtons(button) {
+  menuButton.classList.remove("active");
+  homeButton.classList.remove("active");
+  aboutButton.classList.remove("active");
+  button.classList.add("active");
+}
