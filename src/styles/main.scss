@@ -46,7 +46,9 @@ body {
   height: fit-content;
   border-radius: 15px;
   width: 80%;
+  max-width: 650px;
   margin-top: 40px;
+  transition: opacity 0.3s ease-in-out;
 }
 .button-container {
   display: flex;
@@ -65,36 +67,90 @@ body {
   font-size: 1.1rem;
   font-weight: 600;
   box-sizing: content-box;
+  cursor: pointer;
 }
 .active {
   border: 2px solid $button-active;
   color: $button-active;
+  width: 110px;
+  transition: width 0.3s ease, height 0.3s ease, border 0.3s ease,
+    color 0.5s ease;
+
+  height: 55px;
 }
+
 .leaf {
   position: absolute;
-
   width: 200px;
 }
+
+@keyframes slideAndRotateInFromLeft1 {
+  from {
+    transform: translateX(-100%) rotate(0deg);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0) rotate(137deg);
+    opacity: 1;
+  }
+}
+
 #leaf-1 {
+  animation: slideAndRotateInFromLeft1 1.5s ease-in forwards;
   top: -30px;
-  left: -40px; /* Adjust this value as needed */
-  transform: rotate(137deg);
+  left: -40px;
 }
+
+@keyframes slideAndRotateInFromRight2 {
+  from {
+    transform: translateX(100%) rotate(0deg);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0) rotate(224deg);
+    opacity: 1;
+  }
+}
+
 #leaf-2 {
+  animation: slideAndRotateInFromRight2 1.5s ease-in forwards;
   top: -31px;
-  right: -39px; /* Adjust this value as needed */
-  transform: rotate(224deg);
+  right: -39px;
 }
+@keyframes slideAndRotateInFromLeft3 {
+  from {
+    transform: translateX(-100%) rotate(0deg);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0) rotate(36deg);
+    opacity: 1;
+  }
+}
+
 #leaf-3 {
+  animation: slideAndRotateInFromLeft3 1.5s ease-in forwards;
   bottom: -22px;
   left: -48px;
-  transform: rotate(36deg);
 }
+
+@keyframes slideAndRotateInFromRight4 {
+  from {
+    transform: translateX(100%) rotate(0deg);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0) rotate(312deg);
+    opacity: 1;
+  }
+}
+
 #leaf-4 {
+  animation: slideAndRotateInFromRight4 1.5s ease-in forwards;
   bottom: -22px;
   right: -46px;
-  transform: rotate(312deg);
 }
+
 .text {
   font-size: 1.5rem;
   font-family: "Lato", sans-serif;
@@ -130,8 +186,9 @@ body {
   font-weight: 500;
 }
 .map {
-  min-width: 300px;
+  min-width: 240px;
   width: 80%;
+  padding-top: 50px;
 }
 .about-photo {
   width: 25px;
@@ -162,5 +219,48 @@ body {
   width: 100%;
   display: flex;
   flex-direction: column;
-  gap: 17px;
+  gap: 30px;
+  padding-top: 70px;
+}
+.fade-in {
+  animation: fadeInAnimation 0.5s ease-in forwards;
+}
+
+@keyframes fadeInAnimation {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+.inner-fade-in {
+  opacity: 0;
+  animation: innerFadeInAnimation 0.5s ease-in forwards;
+  animation-delay: 0.5s; /* Delay to wait for the main content fade-in to complete */
+}
+/* Hide scrollbar for Chrome, Safari and Opera */
+::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge, and Firefox */
+element {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+@keyframes innerFadeInAnimation {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@media screen and (min-width: 1440px) {
+  .leaf {
+    position: absolute;
+    width: 300px;
+  }
 }

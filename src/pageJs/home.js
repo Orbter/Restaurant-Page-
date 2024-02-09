@@ -6,7 +6,8 @@ function homePage() {
   const text = document.createElement("text");
   logo.src = pizzaGuy;
   logo.id = "logo";
-  text.className = "text";
+  logo.classList.add("inner-fade-in");
+  text.classList.add("text", "inner-fade-in");
   text.textContent =
     "Discover PureSlice: Where gourmet meets wellness. Bite into our deliciously healthy pizzas, made with organic ingredients and a pinch of joy. Taste the difference health makes. PureSlice - Your slice of health!";
   content.appendChild(logo);

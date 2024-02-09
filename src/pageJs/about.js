@@ -14,7 +14,7 @@ function aboutPage() {
   const info = document.createElement("div");
 
   //classes
-  imgMap.className = "map";
+  imgMap.classList.add("inner-fade-in", "map");
   imgHouse.classList.add("about-photo", "home");
   imgNumber.classList.add("about-photo", "phone");
   Phone.className = "about-headline";
@@ -22,7 +22,7 @@ function aboutPage() {
   addressContainer.className = "address";
   numberContainer.className = "number";
   container.className = "about-container";
-  info.className = "info";
+  info.classList.add("inner-fade-in", "info");
 
   //inner text
   pizzaHouse.textContent = "address: 1435 Broadway, New York, NY 10018, Usa";
@@ -42,8 +42,7 @@ function aboutPage() {
 
   info.appendChild(numberContainer);
   info.appendChild(addressContainer);
-  container.appendChild(info);
-  container.appendChild(imgMap);
-  content.appendChild(container);
+  content.appendChild(info);
+  content.appendChild(imgMap);
 }
 export default aboutPage;

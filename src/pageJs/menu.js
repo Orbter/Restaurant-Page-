@@ -19,7 +19,7 @@ function createMenu(name, img, ingredients) {
   text.textContent = ingredients;
 
   //class
-  menu.className = "menu-container";
+  menu.classList.add("inner-fade-in", "menu-container");
   imgPizza.className = "pizza";
   text.className = "menu-text";
   headline.className = "menu-name ";

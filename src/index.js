@@ -22,7 +22,6 @@ const aboutButton = document.getElementById("about-button");
 homeButton.addEventListener("click", loadHome);
 menuButton.addEventListener("click", loadMenu);
 aboutButton.addEventListener("click", loadAbout);
-
 function loadHome() {
   const content = document.getElementById("content");
   if (homeButton.classList.contains("active")) {
@@ -30,9 +29,18 @@ function loadHome() {
   } else {
     Remove(content);
     toggelButtons(homeButton);
+    content.classList.add("fade-in");
     homePage();
+    content.addEventListener(
+      "animationend",
+      () => {
+        content.classList.remove("fade-in");
+      },
+      { once: true }
+    );
   }
 }
+
 function loadMenu() {
   const content = document.getElementById("content");
   if (menuButton.classList.contains("active")) {
@@ -40,7 +48,15 @@ function loadMenu() {
   } else {
     Remove(content);
     toggelButtons(menuButton);
+    content.classList.add("fade-in");
     menuPage();
+    content.addEventListener(
+      "animationend",
+      () => {
+        content.classList.remove("fade-in");
+      },
+      { once: true }
+    );
   }
 }
 function loadAbout() {
@@ -50,7 +66,15 @@ function loadAbout() {
   } else {
     Remove(content);
     toggelButtons(aboutButton);
+    content.classList.add("fade-in");
     aboutPage();
+    content.addEventListener(
+      "animationend",
+      () => {
+        content.classList.remove("fade-in");
+      },
+      { once: true }
+    );
   }
 }
 function Remove(div) {
@@ -64,3 +88,4 @@ function toggelButtons(button) {
   aboutButton.classList.remove("active");
   button.classList.add("active");
 }
+loadHome();
