@@ -16,6 +16,10 @@ leafImg2.src = leaf;
 leafImg3.src = leaf;
 leafImg4.src = leaf;
 
+function Remove(div) {
+  while (div.firstChild) {
+    div.removeChild(div.firstChild);
+  }
+}
+
 console.log("Loading...");
-aboutPage();
-menuPage();

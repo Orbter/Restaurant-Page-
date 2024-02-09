@@ -9,13 +9,17 @@ $button: #e72e2e;
 $button-active: #ffbe0b;
 $menu-container: rgb(210, 227, 188, 0.56);
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
-  height: 100vh;
+  min-height: 100vh;
   background-color: $primary-color;
   display: flex;
   flex-direction: column;
   align-items: center;
-  overflow: hidden;
+  position: relative;
 }
 .headline {
   font-family: "Delicious Handrawn", cursive;
@@ -38,8 +42,8 @@ body {
   align-items: center;
   flex-direction: column;
   background-color: $content-background;
-  height: 500px;
-  flex-grow: 1;
+  min-height: 500px;
+  height: fit-content;
   border-radius: 15px;
   width: 80%;
   margin-top: 40px;
@@ -103,6 +107,7 @@ body {
 }
 .menu-container {
   margin-top: 15px;
+  margin-bottom: 15px;
   display: flex;
   flex-direction: column;
   text-align: center;
@@ -123,4 +128,39 @@ body {
   font-family: "Protest Riot", sans-serif;
   font-size: 1.1rem;
   font-weight: 500;
+}
+.map {
+  min-width: 300px;
+  width: 80%;
+}
+.about-photo {
+  width: 25px;
+}
+.number {
+  display: flex;
+  gap: 10px;
+  font-size: 1rem;
+  font-family: "Lato", sans-serif;
+}
+.address {
+  display: flex;
+  gap: 10px;
+  font-size: 1rem;
+  font-family: "Lato", sans-serif;
+  text-wrap: wrap;
+}
+.about-container {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  justify-content: center;
+  align-items: center;
+  gap: 50px;
+  padding: 5px;
+}
+.info {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 17px;
 }

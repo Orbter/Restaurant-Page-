@@ -11,8 +11,6 @@
   <body>
     <img class="leaf" id="leaf-1" />
     <img class="leaf" id="leaf-2" />
-    <img class="leaf" id="leaf-3" />
-    <img class="leaf" id="leaf-4" />
 
     <header id="head">
       <div class="headline">
@@ -20,11 +18,14 @@
         <h1>PureSlice</h1>
       </div>
       <nav class="button-container">
-        <button class="button active">home</button>
-        <button class="button">menu</button
-        ><button class="button">about</button>
+        <button class="button active" onclick="loadHome">home</button>
+        <button class="button" onclick="loadMenu">menu</button
+        ><button class="button" onclick="loadAbout">about</button>
       </nav>
     </header>
+
     <div id="content"></div>
+    <img class="leaf" id="leaf-3" />
+    <img class="leaf" id="leaf-4" />
   </body>
 </html>

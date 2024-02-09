@@ -21,8 +21,8 @@ function createMenu(name, img, ingredients) {
   //class
   menu.className = "menu-container";
   imgPizza.className = "pizza";
-  text.className = "menu-name";
-  headline.className = "menu-text";
+  text.className = "menu-text";
+  headline.className = "menu-name ";
 
   //appending
   menu.appendChild(imgPizza);
